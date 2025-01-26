@@ -31,23 +31,29 @@ Responsável por:
 2. O **Presenter** solicita os dados ao **Model**.  
 3. O **Model** realiza a chamada à API e retorna os dados ao **Presenter**.  
 4. O **Presenter** processa os dados e os passa para a **View**, que os exibe para o usuário.
-
+   
 ## 📂 Organização dos Pacotes
 
-- **`model`**: Contém classes responsáveis pela lógica de dados, como:
-  - **Representações de Dados**: Classes como `Postagem`, que representam as entidades de dados que são manipuladas dentro do sistema.
-  - **PostagemAPI**: Classe que faz a recuperação de postagens da API, fazendo chamadas configuradas no pacote `api`.
+## `model`
+Contém as classes responsáveis pela lógica de dados, como:
 
-- **`api`**: Contém as configurações relacionadas ao acesso à API externa, como:
-  - **RetrofitService**: Classe responsável por criar e fornecer instâncias de JsonPlaceAPI usando o cliente Retrofit, configurado com o URL base e o conversor Gson.
-  - **JsonPlaceAPI**: Interface que define os endpoints e métodos de chamada para a API externa.
+- **Representações de Dados**: Classes como `Postagem`, que representam as entidades de dados manipuladas dentro do sistema.
+- **PostagemAPI**: Classe que faz a recuperação de postagens da API, realizando chamadas configuradas no pacote `api`.
 
-- **`view`**: Contém classes responsáveis pela interface com o usuário (UI), como a `MainActivity`.
+## `api`
+Contém as configurações relacionadas ao acesso à API externa, como:
 
-- **`presenter`**:
-- Contém o `PostagemPresenter`, que conecta o **Model** e a **View**.
-- Contém **`IPostagemPresenter`**: Interface que a `MainActivity` deve implementar para receber dados do `PostagemPresenter`.
+- **RetrofitService**: Objeto singleton responsável por criar e fornecer a instância de `JsonPlaceAPI` utilizando o cliente Retrofit, configurado com o URL base e o conversor Gson.
+- **JsonPlaceAPI**: Interface que define os endpoints e métodos de chamada para a API externa.
 
+## `view`
+Contém as classes responsáveis pela interface com o usuário (UI), como a `MainActivity`.
+
+## `presenter`
+Contém o mediador entre o `Model` e a `View`:
+
+- **PostagemPresenter**: Conecta o `Model` e a `View`, realizando a lógica de apresentação e comunicação entre a UI e os dados.
+- **IPostagemPresenter**: Interface que a `MainActivity` deve implementar para receber dados do `PostagemPresenter`.
   
 ## 💡 **Vantagens do MVP em relação ao MVC**
 

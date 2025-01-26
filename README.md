@@ -31,17 +31,23 @@ Responsável por:
 2. O **Presenter** solicita os dados ao **Model**.  
 3. O **Model** realiza a chamada à API e retorna os dados ao **Presenter**.  
 4. O **Presenter** processa os dados e os passa para a **View**, que os exibe para o usuário.
-5. 
+
 ## 📂 Organização dos Pacotes
 
 - **`model`**: Contém classes responsáveis pela lógica de dados, como:
   - **Representações de Dados**: Classes como `Postagem`, que representam as entidades de dados que são manipuladas dentro do sistema.
+  - **PostagemAPI**: Classe que faz a recuperação de postagens da API, fazendo chamadas configuradas no pacote `api`.
 
-- **`api`**: Contém classes responsáveis pelas funções que fazem chamadas à API. Exemplo: A classe `PostagemAPI`, que realiza as chamadas à API para recuperar postagens de uma fonte externa.
+- **`api`**: Contém as configurações relacionadas ao acesso à API externa, como:
+  - **RetrofitService**: Classe responsável por criar e fornecer instâncias de JsonPlaceAPI usando o cliente Retrofit, configurado com o URL base e o conversor Gson.
+  - **JsonPlaceAPI**: Interface que define os endpoints e métodos de chamada para a API externa.
 
 - **`view`**: Contém classes responsáveis pela interface com o usuário (UI), como a `MainActivity`.
 
-- **`presenter`**: Contém o `PostagemPresenter`, que conecta o **Model** e a **View**.
+- **`presenter`**:
+- Contém o `PostagemPresenter`, que conecta o **Model** e a **View**.
+- Contém **`IPostagemPresenter`**: Interface que a `MainActivity` deve implementar para receber dados do `PostagemPresenter`.
+
   
 ## 💡 **Vantagens do MVP em relação ao MVC**
 

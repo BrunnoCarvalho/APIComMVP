@@ -34,26 +34,22 @@ Responsável por:
    
 ## 📂 Organização dos Pacotes
 
-## `model`
-Contém as classes responsáveis pela lógica de dados, como:
+- `model`: Contém as classes responsáveis pela lógica de dados, como:
 
-- **Representações de Dados**: Classes como `Postagem`, que representam as entidades de dados manipuladas dentro do sistema.
-- **PostagemAPI**: Classe que faz a recuperação de postagens da API, realizando chamadas configuradas no pacote `api`.
+   - **Representações de Dados**: Classes como `Postagem`, que representam as entidades de dados manipuladas dentro do sistema.
+   - **PostagemAPI**: Classe que faz a recuperação de postagens da API, realizando chamadas configuradas no pacote `api`.
 
-## `api`
-Contém as configurações relacionadas ao acesso à API externa, como:
+- `api`: Contém as configurações relacionadas ao acesso à API externa, como:
 
-- **RetrofitService**: Objeto singleton responsável por criar e fornecer a instância de `JsonPlaceAPI` utilizando o cliente Retrofit, configurado com o URL base e o conversor Gson.
-- **JsonPlaceAPI**: Interface que define os endpoints e métodos de chamada para a API externa.
+   - **RetrofitService**: Objeto singleton responsável por criar e fornecer a instância de `JsonPlaceAPI` utilizando o cliente Retrofit, configurado com o URL base e o conversor Gson.
+   - **JsonPlaceAPI**: Interface que define os endpoints e métodos de chamada para a API externa.
 
-## `view`
-Contém as classes responsáveis pela interface com o usuário (UI), como a `MainActivity`.
+- `view`: Contém as classes responsáveis pela interface com o usuário (UI), como a `MainActivity`.
 
-## `presenter`
-Contém o mediador entre o `Model` e a `View`:
+- `presenter`: Contém o mediador entre o `Model` e a `View`:
 
-- **PostagemPresenter**: Conecta o `Model` e a `View`, realizando a lógica de apresentação e comunicação entre a UI e os dados.
-- **IPostagemPresenter**: Interface que a `MainActivity` deve implementar para receber dados do `PostagemPresenter`.
+   - **PostagemPresenter**: Conecta o `Model` e a `View`, realizando a lógica de apresentação e comunicação entre a UI e os dados.
+   - **IPostagemPresenter**: Interface que a `MainActivity` deve implementar para receber dados do `PostagemPresenter`.
   
 ## 💡 **Vantagens do MVP em relação ao MVC**
 
